@@ -1,0 +1,8 @@
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='销售经理'
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select * from allusers where username='gch' and pwd='Lucyadfa2rico' and cx='系统管理员'
+Suc:select * from allusers where username='dd' and pwd='zzz' and cx='销售经理'
+Suc:select * from allusers where username='a' and pwd='d' and cx='销售经理'

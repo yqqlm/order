@@ -1,0 +1,63 @@
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select * from allusers where username='test' and pwd='test' and cx='系统管理员'
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 5,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 15,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 5,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 10,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 5,5
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 0,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 5,5
+Suc:select count('id') n from xiaoshoudan
+Suc:select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1 group by id  order by dingdandate desc limit 10,5

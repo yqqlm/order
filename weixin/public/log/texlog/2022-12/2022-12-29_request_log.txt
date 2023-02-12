@@ -1,0 +1,36 @@
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
+Suc:select * from allusers where username='gch' and pwd='Lucy2rico' and cx='系统管理员'
+Suc:select alias from allusers where username='gch'
+Suc:select kehumingcheng,shouhuodizhi,shouhuoren,shouhuorenshouji,shouhuorenzuoji from kehuxinxi
+Suc:select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige
