@@ -4,6 +4,8 @@ include_once '../conn.php';
 include_once '../commonscript.php';
 if(!isset($_SESSION)){
     session_start();
+    print json_encode("No session found");
+    return;
 }
 $p=$_GET['page'];
 $page=($p!='')?intval($p):1;
@@ -18,6 +20,7 @@ if(!$query_count){
 }
 $count = $query_count->fetch_all(MYSQLI_ASSOC);
 $sql=getXiaoshoudanSql();
+$sql=$sql.' group by id ';
 $sql=$sql." order by dingdandate desc";
 $sql=$sql.' limit '.$offset.','.$rows;
 $query=$conn->query($sql);

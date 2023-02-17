@@ -6,9 +6,8 @@ function getKehuxinxiSql(){
 function getCanpinxinxiSql(){
     return "select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige";
 }
-function getXiaoshoudanSql(){
+function getXiaoshoudanSql($condition){
     $sql="select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1";
-    $sql=$sql.' group by id ';
     return $sql;
 }
 function getCommonScript(){
