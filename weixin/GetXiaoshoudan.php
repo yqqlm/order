@@ -2,9 +2,9 @@
 <?php
 include_once '../conn.php';
 include_once '../commonscript.php';
-if(!isset($_SESSION)){
-    session_start();
-    print json_encode("No session found");
+$suc=initLoginSession();
+if(!$suc){
+    print json_encode("登录失败");
     return;
 }
 $p=$_GET['page'];

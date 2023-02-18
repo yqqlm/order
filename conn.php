@@ -441,6 +441,12 @@ function login($username,$pwd,$cx){
 	
 	return false;
 }
+function initLoginSession(){
+    $context=$_GET["LoginContex"];
+    $context = json_decode($context,true);
+    $suc=login($context->username, $context->password, $context->role);
+    return $suc;
+}
 function updateKucunDanjiaById($id,$value)
 {
 	global $conn;

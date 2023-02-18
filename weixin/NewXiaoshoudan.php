@@ -1,8 +1,10 @@
 <?php
 include_once '../conn.php';
 include_once '../tables.php';
-if(!isset($_SESSION)){
-    session_start();
+$suc=initLoginSession();
+if(!$suc){
+    print json_encode("登录失败");
+    return;
 }
 $rec=$_GET["record"];
 $rec = json_decode($rec,true);
