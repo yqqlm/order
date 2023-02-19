@@ -11,7 +11,7 @@ $database=$isTest?"test":'order';
 $aProduct=[];
 $log_sql=true;
 if($database==="test"){
-	echo "Test DB +".$url;
+	//echo "Test DB +".$url;
 }
 ini_set("display_errors","On");
 
@@ -444,7 +444,7 @@ function login($username,$pwd,$cx){
 function initLoginSession(){
     $context=$_GET["LoginContex"];
     $context = json_decode($context,true);
-    $suc=login($context->username, $context->password, $context->role);
+    $suc=login($context["username"], $context["password"], $context["role"]);
     return $suc;
 }
 function updateKucunDanjiaById($id,$value)
