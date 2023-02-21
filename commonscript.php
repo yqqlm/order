@@ -13,6 +13,18 @@ function getXiaoshoudanSql(){
     }
     return $sql;
 }
+function getKucunSql($search){
+    $sql="select * from kucun where 1=1";
+    if($search){
+
+        $sql=$sql." and (zhizhaoshang like '%$search%' ";
+        $sql=$sql." or shangpinleibie like '%$search%' ";
+        $sql=$sql." or shangpinmingcheng like '%$search%' ";
+        $sql=$sql." or shangpinbianhao like '%$search%' )";
+    }
+    $sql=$sql." order by shangpinmingcheng";
+    return $sql;
+}
 function getCommonScript(){
     global $conn;
     $sql=getKehuxinxiSql();
