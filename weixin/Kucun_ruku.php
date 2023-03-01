@@ -14,7 +14,7 @@ $length=count($products);
 $err="";
 for($x=0;$x<$length;$x++){
     $item = $products[$x];
-    $sql=$this->getAddSql("kucunhistory",$item);
+    $sql=$table->getAddSql("kucunhistory",$item);
     $suc=$conn->query($sql);//add record to kucunhistory
     if(!$suc){
         $err = $err. " Error: ".$sql."<br>".$conn->error;
