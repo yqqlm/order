@@ -1748,7 +1748,7 @@ class Tables {
                 }
             }else{
                 if(isset($record)){
-                    $val=$record[$col["name"]];
+                    $val=isset($record[$col["name"]])?$record[$col["name"]]:"";
                    
                 }else{
                     $val=getPostValue($col["name"]);
@@ -1794,7 +1794,7 @@ class Tables {
                 continue;
             }
             if(isset($record)){
-                $val=$record[$col["name"]];
+                $val=isset($record[$col["name"]])?$record[$col["name"]]:"";
                 $val=$this->getSqlValueForUpdate($col,$val,false);
             }else{
                 $val=getPostValue($col["name"]);
