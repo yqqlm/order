@@ -9,7 +9,7 @@ if(!$suc){
 $mc=$_GET['shangpinmingcheng'];
 $bh=$_GET['shangpinbianhao'];
 $gg=$_GET['guige'];
-$sql="select * from kucunhistory where 1=1";
+$sql="select * from kucun where 1=1";
 $sql=$sql." and shangpinmingcheng = '$mc'";
 $sql=$sql." and shangpinbianhao = '$bh'";
 $sql=$sql." and guige = '$gg'";

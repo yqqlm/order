@@ -422,7 +422,7 @@ class Tables {
         else
         {
            // $filename=$_FILES["file"]["name"];
-            $msg=$msg."Upload: " . $_FILES[$colName]["name"] . "<br />";
+            $msg="Upload: " . $_FILES[$colName]["name"] . "<br />";
             $msg= $msg." Size: " . ($_FILES[$colName]["size"] / 1024) . " Kb<br />";
             $msg= $msg." Temp Dir: " . $_FILES[$colName]["tmp_name"];
             $msg=$msg." Stored in: " . $filename;
@@ -720,7 +720,7 @@ class Tables {
                                         <input type="button" name="update" onclick="navigateTo('<?php echo $tableName;?>_updt.php?id=<?php echo $i;?>&',<?php echo $i;?>,'<?php echo $editType;?>')" value="修改" />
                                         <?php
                                     }else if($arrOpts[$x]=="detail"){
-                                        $link=$this->getDetailLink($arr[$i],$tableName,"id");
+                                        $link=$this->getDetailLink($row,$tableName,"id");
                                         ?>
 
                                         <a href="<?php echo $link;?>" >详细信息</a>
