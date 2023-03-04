@@ -328,29 +328,32 @@ function isRuKu($id){
 		}
 	}
 }
-function getSQLDate($col){
+function getSqlDateByType($type,$col,$begin,$end){
 	$sql="";
-	if (getValue("shijiantype")==="本年度" || !getValue("shijiantype")){
+	if ($type==="本年度" || !$type){
 		$date=date("Y");
 		$bd=$date."-01-01";
 		$ed=$date."-12-31";
 		$sql="$col>='".$bd."' and $col<='".$ed."'";
-	}else if (getValue("shijiantype")==="本月"){
+	}else if ($type==="本月"){
 		$date=date("Y-m");
 		$bd=$date."-01";
 		$ed=$date."-31";
 		$sql="$col>='".$bd."' and $col<='".$ed."'";
-	}else if (getValue("shijiantype")==="时间段"){	
-		$bd=getValue("qishi");
-		$ed=getValue("zhongzhi");
+	}else if ($type==="时间段"){	
+		$bd=$begin;
+		$ed=$end;
 		$sql="$col>='".$bd."' and $col<='".$ed."'";
-	}else if (getValue("shijiantype")==="上年度"){	
+	}else if ($type==="上年度"){	
 		$date=date("Y")-1;
 		$bd=$date."-01-01";
 		$ed=$date."-12-31";
 		$sql="$col>='".$bd."' and $col<='".$ed."'";
 	}
 	return $sql;
+}
+function getSQLDate($col){
+	return getSqlDateByType(getValue("shijiantype"),$col,getValue("qishi"),getValue("zhongzhi"));
 }
 function getSelect($name,$table,$field,$noid,$width,$hasNull){
 	if($width)

@@ -21,7 +21,7 @@ if(!$query){
     return;
 }
 $arr = $query->fetch_all(MYSQLI_ASSOC);
-$baris = array('total' => count($all),"list"=>$arr);
+$baris = array('total' => count($arr),"list"=>$arr);
 header('Access-Control-Allow-Origin:*');
 print json_encode($baris);
 ?>

@@ -6,10 +6,22 @@ function getKehuxinxiSql(){
 function getCanpinxinxiSql(){
     return "select shangpinleibie,shangpinmingcheng, shangpinbianhao, guige from kucun group by shangpinleibie,shangpinmingcheng ,shangpinbianhao, guige";
 }
-function getXiaoshoudanSql(){
+function getXiaoshoudanSql($search, $timeValue){
     $sql="select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1";
     if($_SESSION['cx']==="销售经理"){
         $sql=$sql." and xiaoshoudan.xiaoshouyuan ='".$_SESSION['username']."'";
+    }
+    if($search){
+        $sql=$sql." and (kehumingcheng like '%$search%' or ";
+        $sql=$sql."xiaoshouyuan like '%$search%' or ";
+        $sql=$sql."xiaoshoudanproducts.shangpinbianhao like '%$search%' or ";
+        $sql=$sql."xiaoshoudanproducts.shangpinmingcheng like '%$search%') ";
+    }
+    if($timeValue && $timeValue!=="全部时间"){
+        $sqlDate=getSqlDateByType($timeValue,"dingdandate","","");
+        if($sqlDate){
+            $sql=$sql." and ".$sqlDate;
+        }
     }
     return $sql;
 }

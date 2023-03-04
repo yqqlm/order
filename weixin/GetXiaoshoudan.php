@@ -8,11 +8,15 @@ if(!$suc){
     return;
 }
 $p=$_GET['page'];
+$search=$_GET['page'];
+$timeValue=$_GET['timeValue'];
+$orderValue=$_GET['orderValue'];
+
 $page=($p!='')?intval($p):1;
 $rows=5;
 $offset=($page-1)*$rows;
 
-$sql=getXiaoshoudanSql();
+$sql=getXiaoshoudanSql($search, $timeValue);
 $sql=$sql.' group by id ';
 $query_count=$conn->query($sql);
 $all = $query_count->fetch_all(MYSQLI_ASSOC);
@@ -22,7 +26,12 @@ if(!$query_count){
     print json_encode($baris);
     return;
 }
-$sql=$sql." order by dingdandate desc";
+if($orderValue==="倒序"){
+    $sql=$sql." order by dingdandate desc";
+}else{
+    $sql=$sql." order by dingdandate asc";
+}
+
 $sql=$sql.' limit '.$offset.','.$rows;
 $query=$conn->query($sql);
 if(!$query){
