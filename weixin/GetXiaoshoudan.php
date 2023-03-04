@@ -8,7 +8,7 @@ if(!$suc){
     return;
 }
 $p=$_GET['page'];
-$search=$_GET['page'];
+$search=$_GET['searchValue'];
 $timeValue=$_GET['timeValue'];
 $orderValue=$_GET['orderValue'];
 
