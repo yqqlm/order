@@ -25,6 +25,24 @@ function getXiaoshoudanSql($search, $timeValue){
     }
     return $sql;
 }
+function getCaigoudanSql($search, $timeValue){
+    $sql="select caigoudan.* ,round(sum(caigoudanproducts.shuliang*caigoudanproducts.danjia),2) as caigoujine from caigoudan left join caigoudanproducts on caigoudan.id=caigoudanproducts.caigoudanid where 1=1";
+
+    if($search){
+        $sql=$sql." and (gongyingshang like '%$search%' or ";
+        $sql=$sql."caigouyuan like '%$search%' or ";
+        $sql=$sql."caigoudanproducts.shangpinbianhao like '%$search%' or ";
+        $sql=$sql."caigoudanproducts.shangpinmingcheng like '%$search%') ";
+        $sql=$sql."caigoudan.id like '%$search%') ";
+    }
+    if($timeValue && $timeValue!=="全部时间"){
+        $sqlDate=getSqlDateByType($timeValue,"addtime","","");
+        if($sqlDate){
+            $sql=$sql." and ".$sqlDate;
+        }
+    }
+    return $sql;
+}
 function getKucunSql($search){
     $sql="select * from kucun where 1=1";
     if($search){
