@@ -27,7 +27,18 @@ if(!$query2){
     return;
 }
 $arr2 = $query2->fetch_all(MYSQLI_ASSOC);
-$baris = array('kehuxinxi' => $arr,"caninxinxi"=>$arr2);
+
+////////////////////gongyingshang xinxi//////////////////
+$sql3=getGongyingshangxinxiSql();
+$query3=$conn->query($sql3);
+if(!$query3){
+    $baris= array("error"=>"Error: ".$sql3."<br>".$conn->error) ;
+    header('Access-Control-Allow-Origin:*');
+    print json_encode($baris);
+    return;
+}
+$arr3 = $query3->fetch_all(MYSQLI_ASSOC);
+$baris = array('kehuxinxi' => $arr,"caninxinxi"=>$arr2, "gongyingshangxinxi"=>$arr3);
 header('Access-Control-Allow-Origin:*');
 print json_encode($baris);
 ?>
