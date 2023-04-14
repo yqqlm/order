@@ -19,13 +19,13 @@ $offset=($page-1)*$rows;
 $sql=getXiaoshoudanSql($search, $timeValue);
 $sql=$sql.' group by id ';
 $query_count=$conn->query($sql);
-$all = $query_count->fetch_all(MYSQLI_ASSOC);
 if(!$query_count){
     $baris = array("error"=>"Error: ".$sql."<br>".$conn->error) ;
     header('Access-Control-Allow-Origin:*');
     print json_encode($baris);
     return;
 }
+$all = $query_count->fetch_all(MYSQLI_ASSOC);
 if($orderValue==="倒序"){
     $sql=$sql." order by dingdandate desc";
 }else{
