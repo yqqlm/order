@@ -35,7 +35,7 @@ function getCaigoudanSql($search, $timeValue){
         $sql=$sql." and (gongyingshang like '%$search%' or ";
         $sql=$sql."caigouyuan like '%$search%' or ";
         $sql=$sql."caigoudanproducts.shangpinbianhao like '%$search%' or ";
-        $sql=$sql."caigoudanproducts.shangpinmingcheng like '%$search%') ";
+        $sql=$sql."caigoudanproducts.shangpinmingcheng like '%$search%' or ";
         $sql=$sql."caigoudan.id like '%$search%') ";
     }
     if($timeValue && $timeValue!=="全部时间"){
