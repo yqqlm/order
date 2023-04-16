@@ -444,9 +444,14 @@ function login($username,$pwd,$cx){
 	
 	return false;
 }
-function initLoginSession(){
-    $context=$_GET["LoginContex"];
-    $context = json_decode($context,true);
+function initLoginSession($isPost=false){
+	if(!$isPost){
+		$context=$_GET["LoginContex"];
+		
+	}else{
+		$context=$_POST["LoginContex"];
+	}
+	$context = json_decode($context,true);
     $suc=login($context["username"], $context["password"], $context["role"]);
     return $suc;
 }

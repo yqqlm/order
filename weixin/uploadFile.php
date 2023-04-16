@@ -1,7 +1,7 @@
 <?php
 include_once '../conn.php';
 include_once '../tables.php';
-$suc=initLoginSession();
+$suc=initLoginSession(true);
 if(!$suc){
     print json_encode("登录失败");
     return;
