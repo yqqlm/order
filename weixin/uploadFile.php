@@ -6,11 +6,10 @@ if(!$suc){
     print json_encode("登录失败");
     return;
 }
-$rec=$_GET["record"];
-$rec = json_decode($rec,true);
-
-$suc=$table->setRecord("caigoudan",$rec,true);
-$baris = array("suc" => $suc,"id"=>$rec["id"]);
+$id=$_GET['id'];
+$table=$_GET['table'];
+$col=$_GET['column'];
+$suc=$table->uploadFile($table,$col,$id);
 header('Access-Control-Allow-Origin:*');
-print json_encode($baris);
+print json_encode($suc);
 ?>

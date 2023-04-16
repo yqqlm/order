@@ -467,7 +467,7 @@ class Tables {
         }
         return $err;
     }
-    function setRecord($tablename,$record){
+    function setRecord($tablename,$record,$returnId=false){
         $key=$this->getTableKey($tablename);
         $keyType=$this->getTableKeyType($tablename);
         $opt=$record;
@@ -533,6 +533,9 @@ class Tables {
                 $this->setRecord($col["NavTable"],$sub);
                 
             }
+        }
+        if($returnId){
+            $record[$key]=$id;
         }
         $err=$this->uploadFiles($tablename,$id);
         if($err!==""){

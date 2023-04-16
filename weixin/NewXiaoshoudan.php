@@ -9,6 +9,8 @@ if(!$suc){
 $rec=$_GET["record"];
 $rec = json_decode($rec,true);
 
-$suc=$table->setRecord("xiaoshoudan",$rec);
-print $suc;
+$suc=$table->setRecord("xiaoshoudan",$rec,true);
+$baris = array("suc" => $suc,"id"=>$rec["id"]);
+header('Access-Control-Allow-Origin:*');
+print json_encode($baris);
 ?>
