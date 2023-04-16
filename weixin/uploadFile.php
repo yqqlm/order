@@ -7,9 +7,9 @@ if(!$suc){
     return;
 }
 $id=$_GET['id'];
-$table=$_GET['table'];
+$tableName=$_GET['table'];
 $col=$_GET['column'];
-$suc=$table->uploadFile($table,$col,$id);
+$suc=$table->uploadFile($tableName,$col,$id);
 header('Access-Control-Allow-Origin:*');
 print json_encode($suc);
 ?>
