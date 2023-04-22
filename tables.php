@@ -449,7 +449,7 @@ class Tables {
             
         }
         if($msg!==""){
-            //echo  "<script>javascript:alert('".$msg."');</script>";
+            echo  "<script>javascript:alert('".$msg."');</script>";
         }
         
 
