@@ -428,6 +428,7 @@ class Tables {
             $msg=$msg." Stored in: " . $filename;
             $sql="update ".$tableName . " set " . $colName . "=\"". $filename . "\" where ".$key."=" . $kval;
             $msg= $msg . " sql: " . $sql ;
+            return $msg;
             if ( $_FILES[$colName]["size"] < 20000000)
             {
                 move_uploaded_file($_FILES[$colName]["tmp_name"],$filename);
