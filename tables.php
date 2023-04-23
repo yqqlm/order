@@ -1879,7 +1879,7 @@ class Tables {
         }
     }
     function getUploadedFileFolder($tableName,$colName){
-        return $tableName."_".$colName."/";
+        return "./".$tableName."_".$colName."/";
     }
     function getUploadedFileName($colName,$keyValue){
         $strFile=$_FILES[$colName]["name"];
