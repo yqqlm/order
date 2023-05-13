@@ -38,7 +38,18 @@ if(!$query3){
     return;
 }
 $arr3 = $query3->fetch_all(MYSQLI_ASSOC);
-$baris = array('kehuxinxi' => $arr,"caninxinxi"=>$arr2, "gongyingshangxinxi"=>$arr3);
+
+////////////////////users xinxi//////////////////
+$sql4="select username from allusers order by username asc";
+$query4=$conn->query($sql4);
+if(!$query4){
+    $baris= array("error"=>"Error: ".$sql4."<br>".$conn->error) ;
+    header('Access-Control-Allow-Origin:*');
+    print json_encode($baris);
+    return;
+}
+$arr4 = $query4->fetch_all(MYSQLI_ASSOC);
+$baris = array('kehuxinxi' => $arr,"caninxinxi"=>$arr2, "gongyingshangxinxi"=>$arr3, "users":$arr4);
 header('Access-Control-Allow-Origin:*');
 print json_encode($baris);
 ?>
