@@ -10,7 +10,8 @@ $rec=$_GET["record"];
 $rec = json_decode($rec,true);
 
 $suc=$table->setRecord("caigoudan",$rec,true);
-$baris = array("suc" => $suc,"id"=>$rec["id"]);
+$id=isset($rec["id"])?$rec["id"]:"";
+$baris = array("suc" => $suc,"id"=>$id);
 header('Access-Control-Allow-Origin:*');
 print json_encode($baris);
 ?>

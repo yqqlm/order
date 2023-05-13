@@ -37,7 +37,7 @@ class Tables {
         array("name"=>"cydw","title"=>"承运单位","type"=>"","isDetailOnly"=>true),
         array("name"=>"cyr","title"=>"承运人","type"=>"","isDetailOnly"=>true),
         array("name"=>"cyrdh","title"=>"承运人联系电话","type"=>"","isDetailOnly"=>true),
-        array("name"=>"xiaoshouyuan","title"=>"销售经理","type"=>"","default"=>"getDefaultXiaoshouyuan"),
+        array("name"=>"xiaoshouyuan","title"=>"销售经理","type"=>"select","default"=>"getDefaultXiaoshouyuan", "fromtable"=>"allusers","fromfield"=>"username","noid"=>true),
         array("name"=>"tianbiaoren","title"=>"填表人","type"=>"","isDetailOnly"=>true,"default"=>"getDefaultTianbiaoren"),
         array("name"=>"beizhu","title"=>"备注","type"=>"","isDetailOnly"=>true),
         array("name"=>"ischuku","title"=>"是否出库","type"=>"function","source"=>"isChuKu","subtype"=>"agg"),
