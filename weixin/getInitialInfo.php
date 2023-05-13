@@ -40,7 +40,7 @@ if(!$query3){
 $arr3 = $query3->fetch_all(MYSQLI_ASSOC);
 
 ////////////////////users xinxi//////////////////
-$sql4="select username from allusers order by username asc";
+$sql4="select username, cx from allusers order by username asc";
 $query4=$conn->query($sql4);
 if(!$query4){
     $baris= array("error"=>"Error: ".$sql4."<br>".$conn->error) ;

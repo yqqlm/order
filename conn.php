@@ -444,7 +444,7 @@ function login($username,$pwd,$cx){
 	
 	return false;
 }
-function initLoginSession($isPost=false){
+function getLoginContext($isPost=false){
 	if(!$isPost){
 		$context=$_GET["LoginContex"];
 		
@@ -452,6 +452,10 @@ function initLoginSession($isPost=false){
 		$context=$_POST["LoginContex"];
 	}
 	$context = json_decode($context,true);
+    return $context;
+}
+function initLoginSession($isPost=false){
+	$context = getLoginContext($isPost);
     $suc=login($context["username"], $context["password"], $context["role"]);
     return $suc;
 }
@@ -534,4 +538,27 @@ function getDanjiaWithCaiGou($mc,$bh,$gg){
 	}
 	return $arr[0]["danjia"];
 }
+function addUser($username,$pwd,$cx){
+	global $conn;
+	$sql="select * from allusers where username='$username' and cx='$cx'";
+	$query=$conn->query($sql);
+	if(!$query){
+		return $conn->error;
+	}
+	$rowscount=$query->num_rows;
+	if($rowscount>0)
+	{
+		return "用户已经存在";
+	}
+	else
+	{
+		$sql="insert into allusers(username,pwd,cx) values('$username','$pwd','$cx')";
+		$suc= $conn->query($sql);;
+		if(!$suc){
+			return $conn->error;
+		}	
+	}
+	return "";
+}
+	 
 ?>

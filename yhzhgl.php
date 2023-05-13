@@ -1,47 +1,26 @@
 <?php
-
 session_start();
-
 if($_SESSION['cx']!="系统管理员")
 {
 	echo "<script>javascript:alert('不是系统管理员');history.back();</script>";
 	exit;
 }
 
-
 include_once 'conn.php';
 
-	 
-	$addnew=getPostValue("addnew");
-	if($addnew=="1")
-	{
+$addnew=getPostValue("addnew");
+if($addnew=="1")
+{
 	$username=getPostValue('username');
 	$pwd=getPostValue('pwd1');
 	$cx=getPostValue('cx');
-	
-	$sql="select * from allusers where username='$username' and pwd='$pwd'";
-		
-	$query=$conn->query($sql);;
-	$rowscount=$query->num_rows;
-		if($rowscount>0)
-			{
-					
-					echo "<script language='javascript'>alert('multi users');history.back();</script>";
-			}
-			else
-			{
-				//date_default_timezone_set("PRC");
-				
-				$ndate =date("Y-m-d H:i:s");
-
-					$sql="insert into allusers(username,pwd,cx) values('$username','$pwd','$cx')";
-					$conn->query($sql);;
-					echo "<script language='javascript'>alert('adduser');location.href='yhzhgl.php';</script>";
-			}
-	 }
-	 
-	 
-
+	$rtn= addUser($username,$pwd,$cx);
+	if(rtn){
+		echo "<script language='javascript'>alert($rtn);history.back();</script>";
+	}else{
+		echo "<script language='javascript'>alert('添加成功');location.href='yhzhgl.php';</script>";
+	}
+}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
