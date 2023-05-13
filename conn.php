@@ -560,5 +560,14 @@ function addUser($username,$pwd,$cx){
 	}
 	return "";
 }
+function ChangePassword($username,$cx,$pwd){
+	global $conn;
+	$sql="update allusers set pwd='".$pwd."' where username='".$username."' and cx='".$cx."'";
+	$query=$conn->query($sql);
+	if(!$query){
+		return $conn->error;
+	}
+	return "";
+}
 	 
 ?>
