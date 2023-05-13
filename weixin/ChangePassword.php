@@ -1,6 +1,7 @@
 <?php
 include_once '../conn.php';
 $suc=initLoginSession();
+$context=getLoginContext();
 if(!$suc){
     print json_encode("登录失败");
     return;
