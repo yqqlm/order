@@ -8,7 +8,7 @@ if(!$suc){
 $rec=$_GET["record"];
 $rec = json_decode($rec,true);
 $username=$context["username"];
-$changeUser=$rec['username']
+$changeUser=$rec['username'];
 if($username!==$changeUser){
     print json_encode("用户名错");
     return;
