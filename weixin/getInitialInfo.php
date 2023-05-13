@@ -49,7 +49,7 @@ if(!$query4){
     return;
 }
 $arr4 = $query4->fetch_all(MYSQLI_ASSOC);
-$baris = array('kehuxinxi' => $arr,"caninxinxi"=>$arr2, "gongyingshangxinxi"=>$arr3, "users":$arr4);
+$baris = array('kehuxinxi' => $arr,"caninxinxi"=>$arr2, "gongyingshangxinxi"=>$arr3, "users"=>$arr4);
 header('Access-Control-Allow-Origin:*');
 print json_encode($baris);
 ?>
