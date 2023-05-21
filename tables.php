@@ -421,8 +421,8 @@ class Tables {
         }
         else
         {
-            if(!is_writable(dirname($_FILES[$colName]["tmp_name"]))){
-                $msg = dirname($_FILES[$colName]["tmp_name"]). " is not writable";
+            if(!is_writable(dirname($filename))){
+                $msg = dirname($filename). " is not writable";
             }else if(!file_exists($_FILES[$colName]["tmp_name"])){
                 $msg= $_FILES[$colName]["tmp_name"]." does not exist";
             }else{
