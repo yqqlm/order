@@ -413,7 +413,7 @@ class Tables {
         }
 
         $filename=$this->getUploadedFileFullName($tableName,$colName,$keyValue);
-
+        $RelativeResFile=$this->getUploadedFileResName($tableName,$colName,$keyValue);
         if ($_FILES[$colName]["error"] !==UPLOAD_ERR_OK)
         {
             $msg= "Error: " . $_FILES[$colName]["error"] . "<br />";
@@ -430,7 +430,7 @@ class Tables {
                 $msg= $msg." Size: " . ($_FILES[$colName]["size"] / 1024) . " Kb<br />";
                 $msg= $msg." Temp Dir: " . $_FILES[$colName]["tmp_name"];
                 $msg=$msg." Stored in: " . $filename;
-                $sql="update ".$tableName . " set " . $colName . "=\"". $filename . "\" where ".$key."=" . $kval;
+                $sql="update ".$tableName . " set " . $colName . "=\"". $RelativeResFile . "\" where ".$key."=" . $kval;
                 $msg= $msg . " sql: " . $sql ;
 
                 if ( $_FILES[$colName]["size"] < 20000000 )
@@ -1881,9 +1881,9 @@ class Tables {
     function getUploadedFileFolder($tableName,$colName){
         global $isTest;
         if($isTest){
-            $folder=$_SERVER['DOCUMENT_ROOT'] . '/ordertest/' . $tableName.'_'.$colName.'/';
+            $folder=$_SERVER['DOCUMENT_ROOT'] . '/ordertest/' .$this.ResourcePath($tableName,$colName).'/';
         }else{
-            $folder=$_SERVER['DOCUMENT_ROOT'] . '/order/' . $tableName.'_'.$colName.'/';
+            $folder=$_SERVER['DOCUMENT_ROOT'] . '/order/' .$this.ResourcePath($tableName,$colName).'/';
         }
         return $folder;
     }
@@ -1892,9 +1892,15 @@ class Tables {
         $strExt=strrchr($strFile,".");
         return $keyValue.$strExt;
     }
+    function ResourcePath($tableName,$colName)
+    {
+       return $tableName.'_'.$colName;
+    }
     function getUploadedFileFullName($tableName,$colName,$keyValue){
         return $this->getUploadedFileFolder($tableName,$colName).$this->getUploadedFileName($colName,$keyValue);
     }
-
+    function getUploadedFileResName($tableName,$colName,$keyValue){
+        return $this->ResourcePath($tableName,$colName).'/'.$this->getUploadedFileName($colName,$keyValue);
+    }
 }
 ?>
