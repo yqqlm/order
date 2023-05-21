@@ -414,13 +414,19 @@ class Tables {
 
         $filename=$this->getUploadedFileFullName($tableName,$colName,$keyValue);
 
-        if ($_FILES[$colName]["error"] > 0)
+        if ($_FILES[$colName]["error"] !==UPLOAD_ERR_OK)
         {
             $msg= "Error: " . $_FILES[$colName]["error"] . "<br />";
             $err=$err.$msg;
         }
         else
         {
+            if(!is_writable("C:\\temp_upload")){
+                return "C:\\temp_upload is not writable";
+            }
+            if(!file_exists($_FILES[$colName]["tmp_name"])){
+                return $_FILES[$colName]["tmp_name"]." does not exist";
+            }
            // $filename=$_FILES["file"]["name"];
             $msg="Upload: " . $_FILES[$colName]["name"] . "<br />";
             $msg= $msg." Size: " . ($_FILES[$colName]["size"] / 1024) . " Kb<br />";
