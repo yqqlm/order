@@ -64,7 +64,7 @@ function getHuiKuanSql($search, $timeValue){
     if($search){
         $sql=$sql." and (kehumingcheng like '%$search%' or ";
         $sql=$sql."beizhu like '%$search%' or ";
-        $sql=$sql."xiaoshoudanid like '%$search%'） ";
+        $sql=$sql."xiaoshoudanid like '%$search%') ";
     }
     if($timeValue && $timeValue!=="全部时间"){
         $sqlDate=getSqlDateByType($timeValue,"huikuanriqi","","");
@@ -79,7 +79,7 @@ function getFaPiaoSql($search, $timeValue){
 
     if($search){
         $sql=$sql." and (kehumingcheng like '%$search%' or ";
-        $sql=$sql."beizhu like '%$search%'） ";
+        $sql=$sql."beizhu like '%$search%') ";
     }
     if($timeValue && $timeValue!=="全部时间"){
         $sqlDate=getSqlDateByType($timeValue,"kaipiaoriqi","","");
