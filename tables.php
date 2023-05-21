@@ -426,17 +426,17 @@ class Tables {
             }else if(!file_exists($_FILES[$colName]["tmp_name"])){
                 $msg= $_FILES[$colName]["tmp_name"]." does not exist";
             }else{
-                $msg="Upload: " . $_FILES[$colName]["name"] . "<br />";
+                $msg="file existed, Upload: " . $_FILES[$colName]["name"] . "<br />";
                 $msg= $msg." Size: " . ($_FILES[$colName]["size"] / 1024) . " Kb<br />";
                 $msg= $msg." Temp Dir: " . $_FILES[$colName]["tmp_name"];
                 $msg=$msg." Stored in: " . $filename;
                 $sql="update ".$tableName . " set " . $colName . "=\"". $filename . "\" where ".$key."=" . $kval;
                 $msg= $msg . " sql: " . $sql ;
                 //return $msg;
-                if ( $_FILES[$colName]["size"] < 20000000)
+                if ( $_FILES[$colName]["size"] < 20000000 && is_uploaded_file($_FILES[$colName]["tmp_name"]))
                 {
-                    move_uploaded_file($_FILES[$colName]["tmp_name"],$filename);
-            
+                    //move_uploaded_file($_FILES[$colName]["tmp_name"],$filename);
+                    copy($_FILES[$colName]["tmp_name"],$filename);
                     global $conn;
                     $rtn=$conn->query($sql);
                     if($rtn){
