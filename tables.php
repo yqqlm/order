@@ -422,7 +422,7 @@ class Tables {
         else
         {
             
-            $absolutePath = $_SERVER['DOCUMENT_ROOT'] . '/' . $tableName.'_'.$colName.'/';
+            $absolutePath = $_SERVER['DOCUMENT_ROOT'] . '/ordertest/' . $tableName.'_'.$colName.'/';
             $absoluteFile = $absolutePath.$this->getUploadedFileName($colName,$keyValue);
             if(!is_writable($absolutePath)){
                 $msg = $absolutePath. " is not writable";
