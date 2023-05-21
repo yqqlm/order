@@ -1881,9 +1881,9 @@ class Tables {
     function getUploadedFileFolder($tableName,$colName){
         global $isTest;
         if($isTest){
-            $folder=$_SERVER['DOCUMENT_ROOT'] . '/ordertest/' .$this.ResourcePath($tableName,$colName).'/';
+            $folder=$_SERVER['DOCUMENT_ROOT'] . '/ordertest/' .$this->ResourcePath($tableName,$colName).'/';
         }else{
-            $folder=$_SERVER['DOCUMENT_ROOT'] . '/order/' .$this.ResourcePath($tableName,$colName).'/';
+            $folder=$_SERVER['DOCUMENT_ROOT'] . '/order/' .$this->ResourcePath($tableName,$colName).'/';
         }
         return $folder;
     }
