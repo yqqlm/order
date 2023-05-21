@@ -421,11 +421,8 @@ class Tables {
         }
         else
         {
-            
-            $absolutePath = $_SERVER['DOCUMENT_ROOT'] . '/ordertest/' . $tableName.'_'.$colName.'/';
-            $absoluteFile = $absolutePath.$this->getUploadedFileName($colName,$keyValue);
-            if(!is_writable($absolutePath)){
-                $msg = $absolutePath. " is not writable";
+            if(!is_writable(dirname($filename))){
+                $msg = dirname($filename). " is not writable";
             }else if(!file_exists($_FILES[$colName]["tmp_name"])){
                 $msg= $_FILES[$colName]["tmp_name"]." does not exist";
             }else{
@@ -435,18 +432,15 @@ class Tables {
                 $msg=$msg." Stored in: " . $filename;
                 $sql="update ".$tableName . " set " . $colName . "=\"". $filename . "\" where ".$key."=" . $kval;
                 $msg= $msg . " sql: " . $sql ;
-                //return $msg;
-                if ( $_FILES[$colName]["size"] < 20000000 && is_uploaded_file($_FILES[$colName]["tmp_name"]))
+
+                if ( $_FILES[$colName]["size"] < 20000000 )
                 {
-                    move_uploaded_file($_FILES[$colName]["tmp_name"],$absoluteFile);
+                    move_uploaded_file($_FILES[$colName]["tmp_name"],$filename);
                     global $conn;
                     $rtn=$conn->query($sql);
-                    if($rtn){
-                        
-                    }else{
+                    if(!$rtn){
                         $err=$err. $rtn;
                     }
-                    
                 }
                 else
                 {
@@ -455,11 +449,10 @@ class Tables {
             }
 
         }
-        if($msg!==""){
+        /*if($msg!==""){
             echo  "<script>javascript:alert('".$msg."');</script>";
-        }
-        
-
+        }*/
+    
         return $err;
     }
     function uploadFiles($tableName,$keyValue){
@@ -1886,7 +1879,13 @@ class Tables {
         }
     }
     function getUploadedFileFolder($tableName,$colName){
-        return $tableName."_".$colName."/";
+        global $isTest;
+        if($isTest){
+            $folder=$_SERVER['DOCUMENT_ROOT'] . '/ordertest/' . $tableName.'_'.$colName.'/';
+        }else{
+            $folder=$_SERVER['DOCUMENT_ROOT'] . '/order/' . $tableName.'_'.$colName.'/';
+        }
+        return $folder;
     }
     function getUploadedFileName($colName,$keyValue){
         $strFile=$_FILES[$colName]["name"];
