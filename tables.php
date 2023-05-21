@@ -421,38 +421,37 @@ class Tables {
         }
         else
         {
-            if(!is_writable("C:\\temp_upload")){
-                return "C:\\temp_upload is not writable";
-            }
-            if(!file_exists($_FILES[$colName]["tmp_name"])){
-                return $_FILES[$colName]["tmp_name"]." does not exist";
-            }
-           // $filename=$_FILES["file"]["name"];
-            $msg="Upload: " . $_FILES[$colName]["name"] . "<br />";
-            $msg= $msg." Size: " . ($_FILES[$colName]["size"] / 1024) . " Kb<br />";
-            $msg= $msg." Temp Dir: " . $_FILES[$colName]["tmp_name"];
-            $msg=$msg." Stored in: " . $filename;
-            $sql="update ".$tableName . " set " . $colName . "=\"". $filename . "\" where ".$key."=" . $kval;
-            $msg= $msg . " sql: " . $sql ;
-            //return $msg;
-            if ( $_FILES[$colName]["size"] < 20000000)
-            {
-                move_uploaded_file($_FILES[$colName]["tmp_name"],$filename);
-        
-                global $conn;
-                $rtn=$conn->query($sql);
-                if($rtn){
-                    
-                }else{
-                    $err=$err. $rtn;
-                }
-                
-            }
-            else
-            {
-                $err=$err. "Invalid file";
-            }
+            if(!is_writable(dirname($_FILES[$colName]["tmp_name"]))){
+                $msg = dirname($_FILES[$colName]["tmp_name"]). " is not writable";
+            }else if(!file_exists($_FILES[$colName]["tmp_name"])){
+                $msg= $_FILES[$colName]["tmp_name"]." does not exist";
+            }else{
+                $msg="Upload: " . $_FILES[$colName]["name"] . "<br />";
+                $msg= $msg." Size: " . ($_FILES[$colName]["size"] / 1024) . " Kb<br />";
+                $msg= $msg." Temp Dir: " . $_FILES[$colName]["tmp_name"];
+                $msg=$msg." Stored in: " . $filename;
+                $sql="update ".$tableName . " set " . $colName . "=\"". $filename . "\" where ".$key."=" . $kval;
+                $msg= $msg . " sql: " . $sql ;
+                //return $msg;
+                if ( $_FILES[$colName]["size"] < 20000000)
+                {
+                    move_uploaded_file($_FILES[$colName]["tmp_name"],$filename);
             
+                    global $conn;
+                    $rtn=$conn->query($sql);
+                    if($rtn){
+                        
+                    }else{
+                        $err=$err. $rtn;
+                    }
+                    
+                }
+                else
+                {
+                    $err=$err. "Invalid file";
+                }
+            }
+
         }
         if($msg!==""){
             echo  "<script>javascript:alert('".$msg."');</script>";
