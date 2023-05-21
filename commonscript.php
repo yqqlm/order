@@ -58,6 +58,37 @@ function getKucunSql($search){
     $sql=$sql." order by shangpinmingcheng";
     return $sql;
 }
+function getHuiKuanSql($search, $timeValue){
+    $sql="select * from huikuan where 1=1";
+
+    if($search){
+        $sql=$sql." and (kehumingcheng like '%$search%' or ";
+        $sql=$sql."beizhu like '%$search%' or ";
+        $sql=$sql."xiaoshoudanid like '%$search%' ";
+    }
+    if($timeValue && $timeValue!=="全部时间"){
+        $sqlDate=getSqlDateByType($timeValue,"huikuanriqi","","");
+        if($sqlDate){
+            $sql=$sql." and ".$sqlDate;
+        }
+    }
+    return $sql;
+}
+function getFaPiaoSql($search, $timeValue){
+    $sql="select * from fapiao where 1=1";
+
+    if($search){
+        $sql=$sql." and (kehumingcheng like '%$search%' or ";
+        $sql=$sql."beizhu like '%$search%' ";
+    }
+    if($timeValue && $timeValue!=="全部时间"){
+        $sqlDate=getSqlDateByType($timeValue,"kaipiaoriqi","","");
+        if($sqlDate){
+            $sql=$sql." and ".$sqlDate;
+        }
+    }
+    return $sql;
+}
 function getCommonScript(){
     global $conn;
     $sql=getKehuxinxiSql();
