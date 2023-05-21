@@ -421,8 +421,11 @@ class Tables {
         }
         else
         {
-            if(!is_writable(dirname($filename))){
-                $msg = dirname($filename). " is not writable";
+            
+            $absolutePath = $_SERVER['DOCUMENT_ROOT'] . '/' . $tableName.'_'.$colName.'/';
+            $absoluteFile = $absolutePath.$this->getUploadedFileName($colName,$keyValue);
+            if(!is_writable($absolutePath)){
+                $msg = $absolutePath. " is not writable";
             }else if(!file_exists($_FILES[$colName]["tmp_name"])){
                 $msg= $_FILES[$colName]["tmp_name"]." does not exist";
             }else{
@@ -435,8 +438,7 @@ class Tables {
                 //return $msg;
                 if ( $_FILES[$colName]["size"] < 20000000 && is_uploaded_file($_FILES[$colName]["tmp_name"]))
                 {
-                    //move_uploaded_file($_FILES[$colName]["tmp_name"],$filename);
-                    copy($_FILES[$colName]["tmp_name"],$filename);
+                    move_uploaded_file($_FILES[$colName]["tmp_name"],$absoluteFile);
                     global $conn;
                     $rtn=$conn->query($sql);
                     if($rtn){
