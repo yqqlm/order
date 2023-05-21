@@ -11,5 +11,5 @@ $tableName=$_POST['table'];
 $col=$_POST['column'];
 $suc=$table->uploadFile($tableName,$col,$id);
 header('Access-Control-Allow-Origin:*');
-print json_encode($suc);
+print $suc;
 ?>
