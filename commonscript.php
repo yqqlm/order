@@ -74,7 +74,7 @@ function getHuiKuanSql($search, $timeValue){
     }
     return $sql;
 }
-function getPeiFangSql($search, $timeValue){
+function getPeiFangSql($search){
     $sql="select * from peifang where 1=1";
 
     if($search){
