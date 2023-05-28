@@ -416,15 +416,14 @@ class Tables {
         $RelativeResFile=$this->getUploadedFileResName($tableName,$colName,$keyValue);
         if ($_FILES[$colName]["error"] !==UPLOAD_ERR_OK)
         {
-            $msg= "Error: " . $_FILES[$colName]["error"] . "<br />";
-            $err=$err.$msg;
+            $err=$err."Error: " . $_FILES[$colName]["error"];
         }
         else
         {
             if(!is_writable(dirname($filename))){
-                $msg = dirname($filename). " is not writable";
+                $err=$err.dirname($filename). " is not writable";
             }else if(!file_exists($_FILES[$colName]["tmp_name"])){
-                $msg= $_FILES[$colName]["tmp_name"]." does not exist";
+                $err=$err.$_FILES[$colName]["tmp_name"]." does not exist";
             }else{
                 $msg="file existed, Upload: " . $_FILES[$colName]["name"] . "<br />";
                 $msg= $msg." Size: " . ($_FILES[$colName]["size"] / 1024) . " Kb<br />";
@@ -449,9 +448,9 @@ class Tables {
             }
 
         }
-        if($msg!==""){
+        /*if($msg!==""){
             echo  "<script>javascript:alert('".$msg."');</script>";
-        }
+        }*/
     
         return $err;
     }
