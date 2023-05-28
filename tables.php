@@ -449,9 +449,9 @@ class Tables {
             }
 
         }
-        /*if($msg!==""){
+        if($msg!==""){
             echo  "<script>javascript:alert('".$msg."');</script>";
-        }*/
+        }
     
         return $err;
     }
