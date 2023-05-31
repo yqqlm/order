@@ -11,7 +11,7 @@ $sqlWhere="";
 $sqlHead="";
 $sqlExp="";
 $hasQuery=false;
-$arrXiaoshouyuan=array("牛洪薪","关春晖","白春智","夏希阳","耿顺赫","张磊","关春辉","侯申","李光","？","郝勇","崔莹","耿沙");
+$arrXiaoshouyuan=array("牛洪薪","关春晖","白春智","夏希阳","耿顺赫","张磊","关春辉","侯申","李光","？","郝勇","崔莹","耿沙","商文志");
 if($_SESSION['cx']!=="销售总监"){
   array_push($arrXiaoshouyuan,"张磊z");
 }
