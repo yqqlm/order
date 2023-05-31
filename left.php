@@ -19,7 +19,7 @@
         array("title"=>"出入库明细","url"=>"kucunhistory_list.php","role"=>array("系统管理员","营业录入员"))
       );
       $Xiaoshoudingdan=array(
-        array("title"=>"销售订单添加","url"=>"xiaoshoudan_add.php","role"=>array("系统管理员","营业录入员","销售经理")),
+        array("title"=>"销售订单添加","url"=>"xiaoshoudan_add.php","role"=>array("系统管理员","营业录入员","销售经理","销售总监")),
         array("title"=>"销售订单查询","url"=>"xiaoshoudan_list.php","role"=>array("系统管理员","营业录入员","销售经理","销售总监")),
         array("title"=>"产品销售管理","url"=>"table_list.php?tablename=xiaoshoudanproducts&tabletitle=产品销售订单","role"=>array("系统管理员","营业录入员")),
         array("title"=>"订单产品名称管理","url"=>"xiaoshoudanproducts_name_manage.php?tablename=xiaoshoudanproducts","role"=>array("系统管理员"))
@@ -71,7 +71,7 @@
         array("title"=>"发票管理","menus"=>$Fapiao,"role"=>array("系统管理员","营业录入员","销售总监")),
         array("title"=>"对账单","menus"=>$Duizhang,"role"=>array("系统管理员","营业录入员","销售总监","销售经理")),
         array("title"=>"配方管理","menus"=>$PeiFang,"role"=>array("系统管理员","技术经理","技术工程师")),
-        array("title"=>"客户信息管理","menus"=>$Kehuxinxi,"role"=>array("系统管理员","营业录入员")),
+        array("title"=>"客户信息管理","menus"=>$Kehuxinxi,"role"=>array("系统管理员","营业录入员","销售总监")),
         array("title"=>"制造商信息管理","menus"=>$Zhizhaoshang,"role"=>array("系统管理员","营业录入员"))
       );
      ?>
