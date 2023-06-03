@@ -98,6 +98,16 @@ function getFaPiaoSql($search, $timeValue){
     }
     return $sql;
 }
+function getKeHuSql($search){
+    $sql="select * from kehuxinxi where 1=1";
+
+    if($search){
+        $sql=$sql." and (kehumingcheng like '%$search%' or ";
+        $sql=$sql."beizhu like '%$search%') ";
+    }
+    return $sql;
+}
+
 function getCommonScript(){
     global $conn;
     $sql=getKehuxinxiSql();
