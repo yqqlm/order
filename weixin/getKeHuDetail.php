@@ -9,7 +9,7 @@ if(!$suc){
 }
 $id=$_GET['id'];
 
-$query=$conn->query("select * from kehuxinxi where kehumingcheng=".$id);
+$query=$conn->query("select * from kehuxinxi where kehumingcheng='".$id."'");
 if(!$query){
     $baris = array("error"=>"Error: ".$sql."<br>".$conn->error) ;
     header('Access-Control-Allow-Origin:*');
