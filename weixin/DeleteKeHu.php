@@ -9,9 +9,9 @@ if(!$suc){
 }
 $id=$_GET['id'];
 
-$query=$conn->query("delete  from kehuxinxi where kehumingcheng=".$id);
+$query=$conn->query("delete  from kehuxinxi where kehumingcheng='".$id."'");
 if(!$query){
-    $baris = array("error"=>"Error: ".$sql."<br>".$conn->error) ;
+    $baris = array("error"=>"Error: <br>".$conn->error) ;
     header('Access-Control-Allow-Origin:*');
     print json_encode($baris);
     return;
