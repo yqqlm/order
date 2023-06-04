@@ -16,7 +16,7 @@ $rows=5;
 $offset=($page-1)*$rows;
 
 $sql=getKeHuSql($search);
-$sql=$sql.' group by kehumingchneg ';
+$sql=$sql.' group by kehumingcheng ';
 $query_count=$conn->query($sql);
 if(!$query_count){
     $baris = array("error"=>"Error: ".$sql."<br>".$conn->error) ;
