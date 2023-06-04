@@ -467,6 +467,17 @@ class Tables {
         }
         return $err;
     }
+    function isUpdate($record,$key){
+        if(isset($record[$key]) && $record[$key]!=="" && $key==="id"){
+            return true;
+        }
+        if(isset($record[$key]) && $record[$key]!=="" && $key!=="id"){
+            if(isset($record["oldkey"]) && $record["oldkey"]!==""){
+                return true;
+            }
+        }
+        return false;
+    }
     function setRecord($tablename,$record,$returnId=false){
         $key=$this->getTableKey($tablename);
         $keyType=$this->getTableKeyType($tablename);
@@ -482,7 +493,7 @@ class Tables {
         }else if($opt==="add"){
             $sql=$this->getAddSql($tablename,$record);
         }else{
-            if(isset($record[$key]) && $record[$key]!=""){
+            if($this->isUpdate($record,$key)){
                 //if update
                 $sql=$this->getUpdateSql($tablename,$record);
             }else{
