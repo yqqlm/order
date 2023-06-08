@@ -107,7 +107,15 @@ function getKeHuSql($search){
     }
     return $sql;
 }
+function getZhiZhaoShangSql($search){
+    $sql="select * from zhizhaoshang where 1=1";
 
+    if($search){
+        $sql=$sql." and (name like '%$search%' or ";
+        $sql=$sql."beizhu like '%$search%') ";
+    }
+    return $sql;
+}
 function getCommonScript(){
     global $conn;
     $sql=getKehuxinxiSql();
