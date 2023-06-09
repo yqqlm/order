@@ -15,7 +15,7 @@ $page=($p!='')?intval($p):1;
 $rows=5;
 $offset=($page-1)*$rows;
 
-$sql=getKeHuSql($search);
+$sql=getZhiZhaoShangSql($search);
 $sql=$sql.' group by name ';
 $query_count=$conn->query($sql);
 if(!$query_count){
