@@ -42,8 +42,8 @@ if(!$query){
     return;
 }
 $arr = $query->fetch_all(MYSQLI_ASSOC);
-$totals=$table->getTotal($arr,array("xiaoshoujine","yunfei","xiaoshoulirun"),"xiaoshoudan");
-$baris = array('total' => count($all),"list"=>$arr,"totals",$totals);
+$totals=$table->getTotal($all,array("xiaoshoujine","yunfei","xiaoshoulirun"),"xiaoshoudan");
+$baris = array('total' => count($all),"list"=>$arr,"totals" => $totals);
 header('Access-Control-Allow-Origin:*');
 print json_encode($baris);
 ?>
