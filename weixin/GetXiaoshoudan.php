@@ -2,6 +2,7 @@
 <?php
 include_once '../conn.php';
 include_once '../commonscript.php';
+include_once '../tables.php';
 $suc=initLoginSession();
 if(!$suc){
     print json_encode("登录失败");
@@ -41,7 +42,8 @@ if(!$query){
     return;
 }
 $arr = $query->fetch_all(MYSQLI_ASSOC);
-$baris = array('total' => count($all),"list"=>$arr);
+$totals=$tables->getTotal($arr,array("xiaoshoujine","yunfei","xiaoshoulirun"),"xiaoshoudan");
+$baris = array('total' => count($all),"list"=>$arr,"totals",$totals);
 header('Access-Control-Allow-Origin:*');
 print json_encode($baris);
 ?>
