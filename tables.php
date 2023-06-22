@@ -29,7 +29,7 @@ class Tables {
         array("name"=>"fahuozhuangtai","title"=>"发货状态","type"=>"select","options"=>array('否','是'),"isDetailOnly"=>false),
         array("name"=>"shouhuozhuangtai","title"=>"收货状态","type"=>"select","options"=>array('否','是'),"isDetailOnly"=>true),
         array("name"=>"shouhuopingju","title"=>"收货凭据","type"=>"file","isDetailOnly"=>true),
-        array("name"=>"yunfei","title"=>"运费","type"=>"number","isDetailOnly"=>false), 
+        array("name"=>"yunfei","title"=>"运费","type"=>"number","isDetailOnly"=>false,"precision"=>2), 
         array("name"=>"fukuanshijian","title"=>"付款时间","type"=>"date","isDetailOnly"=>false),
         array("name"=>"fukuanfangshi","title"=>"付款方式","type"=>"","isDetailOnly"=>true),
         array("name"=>"fukuanzhuangtai","title"=>"付款状态","type"=>"select","options"=>array('否','是'),"isDetailOnly"=>false,"role"=>array("系统管理员","营业录入员")),
@@ -51,10 +51,10 @@ class Tables {
         array("name"=>"shangpinbianhao","title"=>"商品型号","type"=>"select"),
         array("name"=>"guige","title"=>"规格","type"=>"select"),
         array("name"=>"shuliang","title"=>"数量(公斤)","type"=>"number"),
-        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number"),
+        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number","precision"=>2),
         array("name"=>"xiaoshoudanid","title"=>"订单编号","type"=>"readonlystring"),
         array("name"=>"beizhu","title"=>"备注:","type"=>""),
-        array("name"=>"jinjia","title"=>"进价(每公斤)","type"=>"number","nullable"=>true,"role"=>array("系统管理员"))
+        array("name"=>"jinjia","title"=>"进价(每公斤)","type"=>"number","nullable"=>true,"role"=>array("系统管理员"),"precision"=>2)
     );
     var $arrXiaoshoudanProducts2Describe = array(
         array("name"=>"id","title"=>"产品编号","type"=>"readonlystring"),
@@ -64,10 +64,10 @@ class Tables {
         array("name"=>"shangpinbianhao","title"=>"商品型号","type"=>"select"),
         array("name"=>"guige","title"=>"规格","type"=>"select"),
         array("name"=>"shuliang","title"=>"数量(公斤)","type"=>"number"),
-        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number"),
+        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number","precision"=>2),
         array("name"=>"xiaoshoudanid","title"=>"订单编号","type"=>"Navigation","NavTable"=>"xiaoshoudan","useValAsTitle"=>""),
         array("name"=>"beizhu","title"=>"备注:","type"=>""),
-        array("name"=>"jinjia","title"=>"进价(每公斤)","type"=>"number","nullable"=>true,"role"=>array("系统管理员"))
+        array("name"=>"jinjia","title"=>"进价(每公斤)","type"=>"number","nullable"=>true,"role"=>array("系统管理员"),"precision"=>2)
     );
     var $arrNameManageDescribe = array(
         
@@ -88,7 +88,7 @@ class Tables {
         array("name"=>"guige","title"=>"包装规格","type"=>"string"),
         array("name"=>"zhizhaoshang","title"=>"制造商","type"=>"select","fromtable"=>"zhizhaoshang","fromfield"=>"name","noid"=>true),
         array("name"=>"shuliang","title"=>"数量(公斤)","type"=>"number"),
-        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number","role"=>array("系统管理员")),
+        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number","role"=>array("系统管理员"),"precision"=>2),
         array("name"=>"monthin","title"=>"本月入库","type"=>"function","source"=>"getMonthIn"),
         array("name"=>"monthout","title"=>"本月出库","type"=>"function","source"=>"getMonthOut"),
         array("name"=>"monthinout","title"=>"本月库存变化","type"=>"function","source"=>"getMonthInOut"),
@@ -103,7 +103,7 @@ class Tables {
         array("name"=>"guige","title"=>"包装规格","type"=>"select"),
         array("name"=>"kehumingcheng","title"=>"制造商","type"=>"","display"=>false),
         array("name"=>"shuliang","title"=>"数量(公斤)","type"=>"number"),
-        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number"),
+        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number","precision"=>2),
         array("name"=>"addtime","title"=>"修改时间","type"=>"readonlystring","width"=>"120","display"=>false),
         array("name"=>"beizhu","title"=>"备注","type"=>"")
     );
@@ -117,7 +117,7 @@ class Tables {
         array("name"=>"yaoqiudaohuoshijian","title"=>"要求到货时间:","type"=>"date","isDetailOnly"=>true),
         array("name"=>"shifouxiehuo","title"=>"是否卸货:","type"=>"select","options"=>array('否','是'),"isDetailOnly"=>true),
         
-        array("name"=>"yunfei","title"=>"运费:","type"=>"number"), 
+        array("name"=>"yunfei","title"=>"运费:","type"=>"number","precision"=>2), 
         array("name"=>"fukuanshijian","title"=>"付款时间:","type"=>"date","isDetailOnly"=>true),
         array("name"=>"fukuanfangshi","title"=>"付款方式:","type"=>"","isDetailOnly"=>true),
         array("name"=>"fukuanzhuangtai","title"=>"付款状态:","type"=>"select","options"=>array('否','是')),
@@ -135,7 +135,7 @@ class Tables {
         array("name"=>"shangpinbianhao","title"=>"商品型号:","type"=>"select"),
         array("name"=>"guige","title"=>"规格:","type"=>"select"),
         array("name"=>"shuliang","title"=>"数量(公斤)","type"=>"number"),
-        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number"),
+        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number","precision"=>2),
         array("name"=>"caigoudanid","title"=>"采购单编号:","type"=>"readonlystring"),
         array("name"=>"beizhu","title"=>"备注:","type"=>"")
     );
@@ -145,7 +145,7 @@ class Tables {
         array("name"=>"shangpinbianhao","title"=>"商品型号:","type"=>"select"),
         array("name"=>"guige","title"=>"规格:","type"=>"select"),
         array("name"=>"shuliang","title"=>"数量(公斤)","type"=>"number"),
-        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number"),
+        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number","precision"=>2),
         array("name"=>"addtime","title"=>"采购时间","type"=>"date"),
         array("name"=>"caigoudanid","title"=>"采购单编号:","type"=>"readonlystring"),
         array("name"=>"beizhu","title"=>"备注:","type"=>"")
@@ -158,7 +158,7 @@ class Tables {
         array("name"=>"shangpinbianhao","title"=>"商品型号:","type"=>"select"),
         array("name"=>"guige","title"=>"规格:","type"=>"select"),
         array("name"=>"shuliang","title"=>"数量(公斤)","type"=>"number"),
-        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number"),
+        array("name"=>"danjia","title"=>"单价(每公斤)","type"=>"number","precision"=>2),
         array("name"=>"caigoudanid","title"=>"采购单编号:","type"=>"Navigation","NavTable"=>"caigoudan","useValAsTitle"=>""),
         array("name"=>"beizhu","title"=>"备注:","type"=>"")
     );
@@ -168,15 +168,15 @@ class Tables {
         array("name"=>"shangpinbianhao","title"=>"商品型号","type"=>"string","fromtable"=>"kucun","fromfield"=>"shangpinbianhao"),
         array("name"=>"guige","title"=>"规格","type"=>"string","fromtable"=>"kucun","fromfield"=>"guige"),
         array("name"=>"shuliang","title"=>"数量","type"=>"number"),
-        array("name"=>"danjia","title"=>"单价","type"=>"number"),
-        array("name"=>"jine","title"=>"金额","type"=>"number")
+        array("name"=>"danjia","title"=>"单价","type"=>"number","precision"=>2),
+        array("name"=>"jine","title"=>"金额","type"=>"number","precision"=>2)
     );
     var $arrHuiKuanDescribe = array(
         array("name"=>"id","title"=>"编号","type"=>"readonlystring"),
         //array("name"=>"kehumingcheng","title"=>"客户名称","type"=>"string"),
         array("name"=>"kehumingcheng","title"=>"客户名称","type"=>"select","fromtable"=>"kehuxinxi","fromfield"=>"kehumingcheng","noid"=>true),
         array("name"=>"huikuanriqi","title"=>"回款日期","type"=>"date"),
-        array("name"=>"huikuanjine","title"=>"回款金额","type"=>"number"),
+        array("name"=>"huikuanjine","title"=>"回款金额","type"=>"number","precision"=>2),
         array("name"=>"xiaoshoudanid","title"=>"订单编号","type"=>"number"),
         array("name"=>"beizhu","title"=>"备注","type"=>"")
     );
@@ -185,7 +185,7 @@ class Tables {
         //array("name"=>"kehumingcheng","title"=>"客户名称","type"=>"string"),
         array("name"=>"kehumingcheng","title"=>"客户名称","type"=>"select","fromtable"=>"kehuxinxi","fromfield"=>"kehumingcheng","noid"=>true),
         array("name"=>"kaipiaoriqi","title"=>"开票日期","type"=>"date"),
-        array("name"=>"jine","title"=>"金额","type"=>"number"),
+        array("name"=>"jine","title"=>"金额","type"=>"number","precision"=>2),
         array("name"=>"beizhu","title"=>"备注","type"=>"")
     );
     var $arrUserDescribe = array(
@@ -1281,6 +1281,9 @@ class Tables {
             
         }else{
             $val=$rec[$col["name"]];
+            if($col["type"]==="number" && isset($col["precision"])){
+                $val=round(floatval($val),$col["precision"]);
+            }
         }
         return $val;
     }
@@ -1727,6 +1730,9 @@ class Tables {
                 if($val<=0.001){
                     $val="null";
                 }
+            }
+            if($val && isset($col["precision"])){
+                $val=round($val,$col["precision"]);
             }
         }else if($col["type"]=="file"){
             $val="null";
