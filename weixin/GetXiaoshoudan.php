@@ -12,12 +12,13 @@ $p=$_GET['page'];
 $search=$_GET['searchValue'];
 $timeValue=$_GET['timeValue'];
 $orderValue=$_GET['orderValue'];
+$optionValues=$_GET['optionValues'];
 
 $page=($p!='')?intval($p):1;
 $rows=5;
 $offset=($page-1)*$rows;
 
-$sql=getXiaoshoudanSql($search, $timeValue);
+$sql=getXiaoshoudanSql($search, $timeValue, $optionValues);
 $sql=$sql.' group by id ';
 $query_count=$conn->query($sql);
 if(!$query_count){

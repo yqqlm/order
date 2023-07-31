@@ -9,7 +9,7 @@ function getCanpinxinxiSql(){
 function getGongyingshangxinxiSql(){
     return "select name from zhizhaoshang";
 }
-function getXiaoshoudanSql($search, $timeValue){
+function getXiaoshoudanSql($search, $timeValue, $optionValues){
     $sql="select xiaoshoudan.* ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia),2) as xiaoshoujine ,round(sum(xiaoshoudanproducts.shuliang*xiaoshoudanproducts.danjia-xiaoshoudanproducts.shuliang*xiaoshoudanproducts.jinjia)-xiaoshoudan.yunfei,2) as xiaoshoulirun from xiaoshoudan left join xiaoshoudanproducts on xiaoshoudan.id=xiaoshoudanproducts.xiaoshoudanid where 1=1";
     if($_SESSION['cx']==="销售经理"){
         $sql=$sql." and xiaoshoudan.xiaoshouyuan ='".$_SESSION['username']."'";
@@ -26,6 +26,22 @@ function getXiaoshoudanSql($search, $timeValue){
             $sql=$sql." and ".$sqlDate;
         }
     }
+    if(strpos($optionValues,"逾期未付款")>=0){
+        $value=date("Y-m-d");
+        $sql=$sql." and not fukuanzhuangtai='是' and (isnull(fukuanshijian) or fukuanshijian<'".$value."')";
+    }
+    if(strpos($optionValues,"未付款")>=0){
+        $sql=$sql." and not fukuanzhuangtai='是' ";
+    }  
+    if(strpos($optionValues,"未发货")>=0){
+        $sql=$sql." and not fahuozhuangtai='是' ";
+    }  
+    if(strpos($optionValues,"客户名称为空")>=0){
+        $sql=$sql." and kehumingcheng='' ";
+    } 
+    if(strpos($optionValues,"利润为空")>=0){
+        $sql=$sql." and  xiaoshoudanproducts.jinjia is null";
+    } 
     return $sql;
 }
 function getCaigoudanSql($search, $timeValue){
